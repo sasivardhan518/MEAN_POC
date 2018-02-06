@@ -1,0 +1,119 @@
+/* #404040
+#6DBDD6
+#B71427
+#FFE658 */
+
+#header {
+  width: 100%;
+  height: 50px;
+  margin: 0;
+  background-color: #444444;
+}
+
+#user-icon img {
+  width: 50px;
+  height: 50px;
+  padding: 5px 0 0 5px;
+  float: left;
+}
+
+#user-icon,
+#title {
+  height: 50px;
+  float: left;
+}
+
+#title {
+  float: right;
+  font-size: 18px;
+  line-height: 80px;
+margin-right:10px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container {
+  padding-top: 20px;
+}
+
+/*
+.carousel-inner{
+}*/
+
+.item {
+  height: auto;
+  min-height: 500px;
+  max-height: 500px;
+}
+
+.wrapper {
+  width: 80%;
+  min-height: 550px;
+  max-height: 600px;
+  height: auto;
+  column-count: 0;
+  column-gap: 50px;
+  padding: 50px;
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  right: 0;
+  left:0;
+}
+
+p {
+  line-height: 1.6;
+  font-family: Helvetica;
+  text-align: justify;
+  margin: 0;
+  font-size: 14px;
+}
+
+.star {
+  float: left;
+  width: 250px;
+  shape-outside: url(../assets/Red_star.svg);
+  shape-margin: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.star.right {
+  margin-left: 20px;
+  float: right;
+}
+
+.moon.left {
+  float: left;
+  margin-right: 20px;
+}
+
+.moon {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  background-color: #2badd9;
+  float: right;
+  shape-outside: inset(1% round 50%);
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.square.left {
+  float: left;
+  margin-right: 20px;
+}
+
+.square {
+  border-radius: 5%;
+  height: 200px;
+  width: 200px;
+  background-color: #40e2ac;
+  float: right;
+  shape-outside: inset(1% round 5%);
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.dropdown-menu{
+  margin-top:50px;
+}
