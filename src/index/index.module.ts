@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { IndexComponent } from './index.component';
 import { IndexRoutingModule } from './index.routing.module';
 import { LoginModule } from '../login/login.module';
-import {bootstrap} from 'bootstrap';
+import { RegistrationModule } from '../Registration/registration.module';
+
 
 @NgModule({
   imports: [
     CommonModule,
     IndexRoutingModule,
-    LoginModule
+    LoginModule,
+    RegistrationModule
   ],
   declarations: []
 })

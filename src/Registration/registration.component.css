@@ -1,0 +1,49 @@
+.container{
+    width:60%;
+    margin-top: 20px;
+    background-color: #3a3a3a;
+    border-radius: 5px;
+    padding-bottom: 20px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.page-title{
+    color: rgb(174, 187, 183);
+    font-size: 25px;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.register-title{
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    height:150px;
+    /*background-color: coral;*/
+    margin-bottom: 25px;
+    margin-top: 10px;
+   
+}
+.register-buttons button{
+width:100%;
+overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 20px;
+}
+
+.register-icon{
+    background-image: url(../assets/register.png);
+    height:150px;
+    width:150px;
+    border-radius:150px;
+    margin:auto;
+    background-size: cover;
+
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+      width:90%;
+    }
+  }

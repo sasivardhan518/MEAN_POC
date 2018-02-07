@@ -28,14 +28,15 @@
 
 #title {
   float: right;
-  font-size: 18px;
+  font-size: 30px;
   line-height: 80px;
-margin-right:10px;
+  margin-right:10px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .container {
   padding-top: 20px;
+  width:98%;
 }
 
 /*
@@ -48,7 +49,7 @@ margin-right:10px;
 }
 
 .wrapper {
-  width: 90%;
+  width: 100%;
   min-height: 500px;
   height:auto;
   height: auto;
@@ -95,7 +96,7 @@ p {
   width: 200px;
   background-image: url(../assets/time_work_2.jpg);
   background-repeat: no-repeat;
-    background-size: 200px 200px;
+  background-size: 200px 200px;
   background-color: #2badd9;
   float: right;
   shape-outside: inset(1% round 50%);
@@ -126,10 +127,40 @@ p {
   margin-top:50px;
 }
 
+.time-graph{
+    background-image: url(../assets/time-graph-1.png);
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    padding: 5px 0px 0 5px;
+    float: left;
+    margin-top: 26px;
+    margin-right: 6px;
+}
+
 @media only screen and (max-width: 500px) {
   .square,.moon,.star {
     float:unset;
-    margin: 0;
+    margin: auto;
     padding:0;
+    width:100px;
+    height:100px;
+    background-size: cover;
+    margin-bottom: 25px;
   }
+  .moon{
+    border-radius: 100px;
+  }
+  .container{
+    width:98%;
+  }
+  .wrapper{
+    padding:0;
+    margin:auto;
+    width:100%;
+  }
+  p {
+    text-align: center;
+  }
+  
 }
