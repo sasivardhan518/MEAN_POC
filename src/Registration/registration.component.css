@@ -32,6 +32,11 @@ overflow: hidden;
     margin-bottom: 20px;
 }
 
+.orange{
+    color:coral;
+    font-size:20px;
+}
+
 .register-icon{
     background-image: url(../assets/register.png);
     height:150px;
