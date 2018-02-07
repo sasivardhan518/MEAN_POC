@@ -4,20 +4,18 @@ import { HttpModule } from '@angular/http';
 import { ApiService } from './api.service';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
-import { LoginComponent } from '../login/login.component';
-import { IndexComponent } from '../index/index.component';
-
+import { IndexModule } from '../index/index.module';
+import {bootstrap} from 'bootstrap';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginComponent,
-    IndexComponent
+    AppComponent    
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    AppRoutingModule,
+    AppRoutingModule,    
+    IndexModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
