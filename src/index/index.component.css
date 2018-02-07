@@ -9,7 +9,8 @@
   margin: 0;
   background-color: #444444;
 }
-.white-theme #header{
+
+.white-theme #header {
   background-color: antiquewhite;
 }
 
@@ -30,43 +31,49 @@
   float: right;
   font-size: 30px;
   line-height: 80px;
-  margin-right:10px;
+  margin-right: 10px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .container {
   padding-top: 20px;
-  width:98%;
+  width: 80%;
 }
 
 /*
 .carousel-inner{
 }*/
+.about-content{
+  text-align: left;
+}
+
+.about-content h3,.orange{
+color:coral;
+}
 
 .item {
   height: auto;
-  min-height: 500px;
+  min-height: 90%;
 }
 
 .wrapper {
   width: 100%;
-  min-height: 500px;
-  height:auto;
   height: auto;
+  min-height: 90%;
   column-count: 0;
   column-gap: 50px;
   padding: 50px;
   margin-left: auto;
   margin-right: auto;
   right: 0;
-  left:0;
-  text-align:center;
+  left: 0;
+  text-align: center;
 }
 
 p {
   line-height: 1.6;
   font-family: Helvetica;
-  text-align: justify;
+  text-align: left;
   margin: 0;
   font-size: 14px;
 }
@@ -74,10 +81,10 @@ p {
 .star {
   float: left;
   width: 250px;
-  shape-outside: url(../assets/Red_star.svg);
+  /* shape-outside: url(../assets/Red_star.svg);
   shape-margin: 10px;
   margin-right: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 10px; */
 }
 
 .star.right {
@@ -98,10 +105,11 @@ p {
   background-repeat: no-repeat;
   background-size: 200px 200px;
   background-color: #2badd9;
-  float: right;
-  shape-outside: inset(1% round 50%);
+  margin:auto;
+  /*float: right;
+   shape-outside: inset(1% round 50%);
   margin-left: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 10px; */
 }
 
 .square.left {
@@ -118,49 +126,55 @@ p {
   background-size: 200px 200px;
   background-color: #40e2ac;
   float: right;
-  shape-outside: inset(1% round 5%);
+  /* shape-outside: inset(1% round 5%);
   margin-left: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 10px; */
 }
 
-.dropdown-menu{
-  margin-top:50px;
+.dropdown-menu {
+  margin-top: 50px;
 }
 
-.time-graph{
-    background-image: url(../assets/time-graph-1.png);
-    background-size: cover;
-    width: 25px;
-    height: 25px;
-    padding: 5px 0px 0 5px;
-    float: left;
-    margin-top: 26px;
-    margin-right: 6px;
+.time-graph {
+  background-image: url(../assets/time-graph-1.png);
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  padding: 5px 0px 0 5px;
+  float: left;
+  margin-top: 26px;
+  margin-right: 6px;
+}
+.glyphicon-th-large,.glyphicon-time{
+width:35px;
+height:35px;
 }
 
-@media only screen and (max-width: 500px) {
-  .square,.moon,.star {
-    float:unset;
+@media only screen and (max-width: 640px) {
+  .square,
+  .moon,
+  .star {
+    float: unset;
     margin: auto;
-    padding:0;
-    width:100px;
-    height:100px;
+    padding: 0;
+    width: 100px;
+    height: 100px;
     background-size: cover;
     margin-bottom: 25px;
   }
-  .moon{
+  .moon {
     border-radius: 100px;
   }
-  .container{
-    width:98%;
+  .container {
+    width: 98%;
   }
-  .wrapper{
-    padding:0;
-    margin:auto;
-    width:100%;
+  .wrapper {
+    padding: 0;
+    margin: auto;
+    width: 100%;
   }
-  p {
-    text-align: center;
+  .about-content {
+    text-align: left;
   }
-  
 }
+

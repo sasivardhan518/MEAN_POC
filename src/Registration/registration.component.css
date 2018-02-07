@@ -36,10 +36,10 @@ overflow: hidden;
     background-image: url(../assets/register.png);
     height:150px;
     width:150px;
-    border-radius:150px;
+    /*border-radius:150px;*/
     margin:auto;
     background-size: cover;
-
+    opacity:0.6;
 }
 
 @media only screen and (max-width: 500px) {
