@@ -7,7 +7,7 @@
   width: 100%;
   height: 50px;
   margin: 0;
-  background-color: #444444;
+  background-color: #222222ef;
 }
 
 .white-theme #header {
@@ -15,10 +15,11 @@
 }
 
 #user-icon img {
-  width: 50px;
-  height: 50px;
-  padding: 5px 0 0 5px;
-  float: left;
+    width: 45px;
+    height: 45px;
+    padding: 5px 0 0 5px;
+    float: left;
+    cursor: pointer;
 }
 
 #user-icon,
@@ -29,15 +30,16 @@
 
 #title {
   float: right;
-  font-size: 30px;
-  line-height: 80px;
+  font-size: 18px;
+  line-height: 50px;
   margin-right: 10px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .container {
-  padding-top: 20px;
+  margin-top: 20px;
   width: 80%;
+background-color: rgb(27, 27, 27);  
 }
 
 /*
@@ -68,6 +70,7 @@ color:coral;
   right: 0;
   left: 0;
   text-align: center;
+  
 }
 
 p {
@@ -99,11 +102,11 @@ p {
 
 .moon {
   border-radius: 50%;
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
   background-image: url(../assets/time_work_2.jpg);
   background-repeat: no-repeat;
-  background-size: 200px 200px;
+  background-size: cover;
   background-color: #2badd9;
   margin:auto;
   /*float: right;
@@ -119,13 +122,14 @@ p {
 
 .square {
   background-image: url(../assets/time_work_1.jpg);
-  border-radius: 5%;
-  height: 200px;
-  width: 200px;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
   background-repeat: no-repeat;
-  background-size: 200px 200px;
+  background-size: cover;
   background-color: #40e2ac;
   float: right;
+  margin-top:35px;
   /* shape-outside: inset(1% round 5%);
   margin-left: 20px;
   margin-bottom: 10px; */
@@ -138,11 +142,11 @@ p {
 .time-graph {
   background-image: url(../assets/time-graph-1.png);
   background-size: cover;
-  width: 25px;
-  height: 25px;
+  width: 18px;
+  height: 18px;
   padding: 5px 0px 0 5px;
   float: left;
-  margin-top: 26px;
+  margin-top: 17px;
   margin-right: 6px;
 }
 .glyphicon-th-large,.glyphicon-time{
