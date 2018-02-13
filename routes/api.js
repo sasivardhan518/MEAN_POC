@@ -21,13 +21,14 @@ router.post('/addUser', function(req,res,next){
     console.log(user.emailId);
     var tempUser = new UserModel({
       userid: user.userId,
-      passowrd: user.password,
+      password: user.password,
       firstname: user.firstName,
       lastname: user.lastName,
       emailid : user.emailId
     });
     tempUser.save(function(err,data){
       if(err){
+        console.log(err);
         if(err.name == "ValidationError"){
           res.json( new responseObject("Email id validation failed.", status.failed , null));
         }
@@ -43,12 +44,19 @@ router.post('/loginUser',function(req,res,next){
   database.init();
   var user = req.body;
   var tempUser = {
-    userid: 'shashi',
-    password: '1234567'
+    userid: user.userId,
+    password: user.password
   };
   UserModel.findOne(tempUser, function(err, data){
-    console.log(err);
-    console.log(data);
+    if(err){
+      console.log(err);
+        res.json(new responseObject(err._message, status.failed, null));
+    }else if(data){
+      res.json(new responseObject(null, status.success, data));
+    }
+    else{
+      res.json(new responseObject("Incorrect Username/Password provided.", status.failed, null));
+    }
   });
 });
 
