@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IUser } from '../Models/IUser';
-
+import { RegistrationService } from './shared/registration.service';
+import {} from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -10,14 +11,14 @@ import { IUser } from '../Models/IUser';
 export class RegistrationComponent {
   registrationTitle: string;
   newUser : IUser ={emailId :"",firstName:"",lastName:"",userId:"", password:""};
-  constructor() {
+  constructor(private registrationService : RegistrationService) {
     this.registrationTitle = 'Registration';
    }
 
  
 
   register(){
-    console.log(this.newUser);
+    this.registrationService.getUsers(this.newUser).subscribe(data => console.log(data));
   }
 
 }

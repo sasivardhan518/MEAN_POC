@@ -3,7 +3,7 @@ import { appConfig } from './app-config';
 export let apiConfig = {
   urls: {
    getUsers : getUrl("api/getUsers"),
-   addUsers : getUrl("api/addUsers")
+   addUsers : getUrl("api/addUser")
   }
 };
 
