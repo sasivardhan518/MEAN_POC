@@ -10,14 +10,14 @@ import {} from 'rxjs';
 })
 export class RegistrationComponent {
   registrationTitle: string;
-  newUser : IUser ={emailId :"",firstName:"",lastName:"",userId:"", password:""};
+  newUser: IUser = {emailId : '', firstName: '', lastName: '', userId: '', password: ''};
   constructor(private registrationService : RegistrationService) {
     this.registrationTitle = 'Registration';
    }
 
- 
 
-  register(){
+
+  register() {
     this.registrationService.getUsers(this.newUser).subscribe(data => console.log(data));
   }
 

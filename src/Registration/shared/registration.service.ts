@@ -11,12 +11,12 @@ const httpOptions = {
 };
 
 @Injectable()
-export class RegistrationService { 
+export class RegistrationService {
     constructor(private http: HttpClient) {
     }
- 
- 
-    getUsers(user: IUser): Observable<any> { 
+
+
+    getUsers(user: IUser): Observable<any> {
         return this.http.post(apiConfig.urls.addUsers, JSON.stringify(user),httpOptions).map((response: Response) => { return true; });
     };
 }

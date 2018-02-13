@@ -10,7 +10,7 @@ import { RegistrationService } from './shared/registration.service';
     RegistrationRoutingModule,
   ],
   declarations: [],
-  providers:[RegistrationService]
+  providers: [RegistrationService]
 })
 
 export class RegistrationModule {}

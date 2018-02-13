@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { LoginRoutingModule } from './login.routing.module';
+import { LoginService } from './shared/login.service';
 
 @NgModule({
   imports: [
@@ -9,7 +10,8 @@ import { LoginRoutingModule } from './login.routing.module';
     FormsModule,
     LoginRoutingModule
   ],
-  declarations: []
+  declarations: [],
+  providers: [LoginService]
 })
 
 export class LoginModule { }

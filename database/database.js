@@ -11,6 +11,6 @@ var callback = function(err,data){
 		console.log("connection success");
 		conflag=true;
 		con = mongoose.connection;
-	}	
-}	
+	}
+}
 module.exports={con,init,conflag};

@@ -12,7 +12,7 @@ const registrationRoutes: Routes = [
   imports: [
     RouterModule.forRoot(
       registrationRoutes
-    ),FormsModule
+    ), FormsModule
   ],
   declarations: [RegistrationComponent],
   exports: [
