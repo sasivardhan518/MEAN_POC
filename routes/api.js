@@ -20,11 +20,11 @@ router.post('/addUser', function(req,res,next){
     console.log(req.body);
     console.log(user.emailId);
     var tempUser = new UserModel({
-      userid: user.userId,
+      userId: user.userId,
       password: user.password,
-      firstname: user.firstName,
-      lastname: user.lastName,
-      emailid : user.emailId
+      firstName: user.firstName,
+      lastName: user.lastName,
+      emailId : user.emailId
     });
     tempUser.save(function(err,data){
       if(err){
@@ -44,7 +44,7 @@ router.post('/loginUser',function(req,res,next){
   database.init();
   var user = req.body;
   var tempUser = {
-    userid: user.userId,
+    userId: user.userId,
     password: user.password
   };
   UserModel.findOne(tempUser, function(err, data){
