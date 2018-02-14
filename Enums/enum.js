@@ -4,4 +4,5 @@ var statusEnum = {
 }
 
 
-module.exports = statusEnum;
+
+module.exports = { status : statusEnum };

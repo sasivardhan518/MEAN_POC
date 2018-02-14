@@ -6,16 +6,21 @@ var path = require("path");
 var responseObject = require('../base structures/errorStructure');
 var mongoose =  require('mongoose');
 var database = require("../database/database");
-var status = require("../Enums/enum");
+var {status} = require("../Enums/enum");
 var users = require("../models/users");
 
 router.use(bodyParser.urlencoded({extended: true}));
 router.use(bodyParser.json());
 
 router.use(cors());
+router.use(function(req, res, next){
+  database.init(req, res);
+  res.Response = new responseObject();
+  next();
+})
 
 router.post('/addUser', function(req,res,next){
-    database.init();
+    
     var user = req.body;
     console.log(req.body);
     console.log(user.emailId);
@@ -30,18 +35,18 @@ router.post('/addUser', function(req,res,next){
       if(err){
         console.log(err);
         if(err.name == "ValidationError"){
-          res.json( new responseObject("Email id validation failed.", status.failed , null));
+          res.Response.setResponse("Email id validation failed.", status.failed , null);
         }
         else{
-          res.json(new responseObject("user id already exists.", status.failed, null));
+          res.Response.setResponse("user id already exists.", status.failed, null);
         }
       }else
-      res.json(new responseObject(null, status.success, data));
+      res.Response.setResponse(null, status.success, data);
+      res.json(res.Response);
     });
 });
 
 router.post('/loginUser',function(req,res,next){
-  database.init();
   var user = req.body;
   var tempUser = {
     userId: user.userId,
@@ -50,13 +55,14 @@ router.post('/loginUser',function(req,res,next){
   UserModel.findOne(tempUser, function(err, data){
     if(err){
       console.log(err);
-        res.json(new responseObject(err._message, status.failed, null));
+      res.Response.setResponse(err._message, status.failed, null);
     }else if(data){
-      res.json(new responseObject(null, status.success, data));
+      res.Response.setResponse(null, status.success, data);
     }
     else{
-      res.json(new responseObject("Incorrect Username/Password provided.", status.failed, null));
+      res.Response.setResponse( "Incorrect Username/Password provided.", status.failed, null);
     }
+    res.json(res.Response);
   });
 });
 
