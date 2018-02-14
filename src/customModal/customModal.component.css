@@ -1,6 +1,23 @@
 .custom-modal{
   color:black;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.error-message{
+  font-size: 18px;
 }
 
+.modal-body{
+  text-align: center;
+}
 
+.modal-title{
+  color: red;
+  font-weight: bold;
+}
+
+.close{
+  background-color: red;
+  color: white;
+  opacity:1;
+  border-radius: 45%;
+}
