@@ -16,7 +16,7 @@ export class RegistrationService {
     }
 
 
-    getUsers(user: IUser): Observable<any> {
-        return this.http.post(apiConfig.urls.addUsers, JSON.stringify(user),httpOptions).map((response: Response) => { return true; });
+    addUser(user: IUser): Observable<any> {
+        return this.http.post(apiConfig.urls.addUsers, JSON.stringify(user),httpOptions).map((response: Response) => { return response; });
     };
 }

@@ -25,19 +25,31 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.loginService.login(this.user).subscribe(data => this.validateLogin(data));
+    if(!this.user.userId){
+      this.showModal("Please provide username","Login Error");
+    }
+    else if(!this.user.password){
+      this.showModal("Please provide password","Login Error");
+    }
+    else{
+      this.loginService.login(this.user).subscribe(data => this.validateLogin(data));
+    }
   }
 
   validateLogin(response: IResponse) {
     if (response.Status === StatusEnum.failed) {
-      const initialState = {
-        errorMessage: response.Error,
-        title: 'Login Error'
-      };
-      this.bsModalRef = this.modalService.show(CustomModalComponent, {initialState});
-      this.bsModalRef.content.closeBtnName = 'Close';
+      this.showModal(response.Error,"Login Error");
     } else {
       alert('login success for: ' + response.Data.emailId);
     }
+  }
+
+  showModal(errorMessage, title){
+    const initialState = {
+      errorMessage: errorMessage,
+      title: 'Login Error'
+    };
+    this.bsModalRef = this.modalService.show(CustomModalComponent, {initialState});
+    this.bsModalRef.content.closeBtnName = 'Close';
   }
 }
