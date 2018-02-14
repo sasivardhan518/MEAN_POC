@@ -7,18 +7,23 @@ import { AppRoutingModule } from './app.routing.module';
 import { IndexModule } from '../index/index.module';
 import {bootstrap} from 'bootstrap';
 import { FormsModule } from '@angular/forms';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { CustomModalComponent } from '../customModal/customModal.component';
 @NgModule({
   declarations: [
-    AppComponent    
-  ],
+    AppComponent,
+    CustomModalComponent
+],
   imports: [
     BrowserModule,
     HttpModule,
-    AppRoutingModule,    
+    AppRoutingModule,
     IndexModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot()
   ],
   providers: [ApiService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[CustomModalComponent]
 })
 export class AppModule { }

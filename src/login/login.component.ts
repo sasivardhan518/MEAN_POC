@@ -3,6 +3,9 @@ import { LoginService } from './shared/login.service';
 import { IUserCredentials } from '../Models/IUser';
 import { IResponse } from '../ClientModels/IResponse';
 import { StatusEnum } from '../ClientEnums/StatusEnum';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { CustomModalComponent } from '../customModal/customModal.component';
 
 @Component({
   selector: 'app-login',
@@ -10,9 +13,10 @@ import { StatusEnum } from '../ClientEnums/StatusEnum';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  bsModalRef: BsModalRef;
   loginTitle: string;
   user: IUserCredentials = { userId: 'test', password: 'ssssss' };
-  constructor(private loginService: LoginService) {
+  constructor(private modalService: BsModalService, private loginService: LoginService) {
     this.loginTitle = 'Login';
   }
 
@@ -21,7 +25,18 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.loginService.login(this.user).subscribe(data => this.validateLogin(data));
+    const initialState = {
+      list: [
+        'Open a modal with component',
+        'Pass your data',
+        'Do something else',
+        '...'
+      ],
+      title: 'Modal with component'
+    };
+    this.bsModalRef = this.modalService.show(CustomModalComponent, {initialState});
+    this.bsModalRef.content.closeBtnName = 'Close';
+    //this.loginService.login(this.user).subscribe(data => this.validateLogin(data));
   }
 
   validateLogin(response: IResponse) {
