@@ -6,11 +6,9 @@
   </button>
 </div>
 <div class="modal-body">
-  <ul *ngIf="list.length">
-    <li *ngFor="let item of list">{{item}}</li>
-  </ul>
+  <span class="error-messgae pull-center">{{errorMessage}}</span>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{closeBtnName}}</button>
+  <button type="button" class="btn btn-default pull-right" (click)="bsModalRef.hide()">{{closeBtnName}}</button>
 </div>
 </div>

@@ -25,23 +25,17 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    const initialState = {
-      list: [
-        'Open a modal with component',
-        'Pass your data',
-        'Do something else',
-        '...'
-      ],
-      title: 'Modal with component'
-    };
-    this.bsModalRef = this.modalService.show(CustomModalComponent, {initialState});
-    this.bsModalRef.content.closeBtnName = 'Close';
-    //this.loginService.login(this.user).subscribe(data => this.validateLogin(data));
+    this.loginService.login(this.user).subscribe(data => this.validateLogin(data));
   }
 
   validateLogin(response: IResponse) {
     if (response.Status === StatusEnum.failed) {
-      alert(response.Error);
+      const initialState = {
+        errorMessage: response.Error,
+        title: 'Login Error'
+      };
+      this.bsModalRef = this.modalService.show(CustomModalComponent, {initialState});
+      this.bsModalRef.content.closeBtnName = 'Close';
     } else {
       alert('login success for: ' + response.Data.emailId);
     }
