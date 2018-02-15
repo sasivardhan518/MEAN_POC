@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { CustomModalComponent } from '../customModal/customModal.component';
 import { AuthService } from './shared/auth.service';
+import { AuthGuard } from '../guards/authGuard.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,7 @@ import { AuthService } from './shared/auth.service';
     FormsModule,
     ModalModule.forRoot()
   ],
-  providers: [ApiService, AuthService],
+  providers: [ApiService, AuthService, AuthGuard],
   bootstrap: [AppComponent],
   entryComponents:[CustomModalComponent]
 })

@@ -20,4 +20,8 @@ getCurrentUser(){
   return this.currentUser;
 }
 
+isUserLoggedIn(){
+  return this.currentUser ? true : false;
+}
+
 }

@@ -14,9 +14,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.currentUser = this.authService.getCurrentUser();
-    if(!this.currentUser){
-      this.router.navigate(['/index']);
-    }
+    // if(!this.currentUser){
+    //   this.router.navigate(['/index']);
+    // }
   }
 
   /* Set the width of the side navigation to 250px */
