@@ -6,6 +6,7 @@ var path = require("path");
 var responseObject = require('../base structures/errorStructure');
 var mongoose =  require('mongoose');
 var database = require("../database/database");
+var {sessionManager}  = require("../Session/session");
 var {status} = require("../Enums/enum");
 var users = require("../models/users");
 
@@ -15,6 +16,7 @@ router.use(bodyParser.json());
 router.use(cors());
 router.use(function(req, res, next){
   database.init(req, res);
+
   res.Response = new responseObject();
   next();
 })
@@ -57,6 +59,7 @@ router.post('/loginUser',function(req,res,next){
       console.log(err);
       res.Response.setResponse(err._message, status.failed, null);
     }else if(data){
+      sessionManager.setSession(tempUser.userId);
       res.Response.setResponse(null, status.success, data);
     }
     else{

@@ -4,6 +4,7 @@ import { IndexComponent } from './index.component';
 import { IndexRoutingModule } from './index.routing.module';
 import { LoginModule } from '../login/login.module';
 import { RegistrationModule } from '../Registration/registration.module';
+import { HomeModule } from '../home/home.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { RegistrationModule } from '../Registration/registration.module';
     CommonModule,
     IndexRoutingModule,
     LoginModule,
-    RegistrationModule
+    RegistrationModule,
+    HomeModule
   ],
   declarations: []
 })

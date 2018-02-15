@@ -6,6 +6,7 @@ import { StatusEnum } from '../ClientEnums/StatusEnum';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { CustomModalComponent } from '../customModal/customModal.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   bsModalRef: BsModalRef;
   loginTitle: string;
   user: IUserCredentials = { userId: 'test', password: 'ssssss' };
-  constructor(private modalService: BsModalService, private loginService: LoginService) {
+  constructor(private modalService: BsModalService, private loginService: LoginService, private router: Router) {
     this.loginTitle = 'Login';
   }
 
@@ -40,7 +41,8 @@ export class LoginComponent implements OnInit {
     if (response.Status === StatusEnum.failed) {
       this.showModal(response.Error,"Login Error");
     } else {
-      alert('login success for: \n' + response.Data.emailId);
+      this.router.navigate(['/home']);
+      //alert('login success for: \n' + response.Data.emailId);
     }
   }
 
