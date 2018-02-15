@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
     if (response.Status === StatusEnum.failed) {
       this.showModal(response.Error,"Login Error");
     } else {
-      alert('login success for: ' + response.Data.emailId);
+      alert('login success for: \n' + response.Data.emailId);
     }
   }
 

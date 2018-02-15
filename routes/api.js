@@ -60,7 +60,7 @@ router.post('/loginUser',function(req,res,next){
       res.Response.setResponse(null, status.success, data);
     }
     else{
-      res.Response.setResponse( "Incorrect Username/Password provided.", status.failed, null);
+      res.Response.setResponse( "Incorrect Username/Password provided. \n Please try to login with valid credentials", status.failed, null);
     }
     res.json(res.Response);
   });

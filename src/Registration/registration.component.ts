@@ -7,6 +7,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { IResponse } from '../ClientModels/IResponse';
 import { StatusEnum } from '../ClientEnums/StatusEnum';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +19,7 @@ export class RegistrationComponent {
   registrationTitle: string;
   confirmPassword: string;
   newUser: IUser = {emailId : '', firstName: '', lastName: '', userId: '', password: ''};
-  constructor(private registrationService : RegistrationService, private modalService: BsModalService) {
+  constructor(private registrationService : RegistrationService, private modalService: BsModalService, private router: Router) {
     this.registrationTitle = 'Registration';
    }
 
@@ -33,7 +34,8 @@ export class RegistrationComponent {
     if(response.Status == StatusEnum.failed){
       this.showModal(response.Error, "Registration Error");
     }else{
-      this.showModal("Registered Successfully", "Registration Succes");
+      this.router.navigate(['/login']);
+      this.showModal("Registered Successfully. \n Login to explore Time Tracker.", "Registration Succes");
     }
   }
 
