@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../app/shared/auth.service';
+import { IUser } from '../Models/IUser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  currentUser : IUser;
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
+    this.currentUser = this.authService.getCurrentUser();
+    if(!this.currentUser){
+      this.router.navigate(['/index']);
+    }
   }
 
   /* Set the width of the side navigation to 250px */

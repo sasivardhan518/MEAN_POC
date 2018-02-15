@@ -4,7 +4,9 @@ const usersSession = [];
 
 const sessionManager = function(){
     setSession= (userid) =>{
-        usersSession.push({ userid : userid, token : uniqid(), lastAccessedTime: new Date() })
+        var token = uniqid();
+        usersSession.push({ userid : userid, token : token, lastAccessedTime: new Date() });
+        return token;
         console.log(usersSession);
         //console.log(userid);
     };

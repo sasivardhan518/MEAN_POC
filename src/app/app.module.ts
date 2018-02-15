@@ -9,6 +9,7 @@ import {bootstrap} from 'bootstrap';
 import { FormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { CustomModalComponent } from '../customModal/customModal.component';
+import { AuthService } from './shared/auth.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,7 @@ import { CustomModalComponent } from '../customModal/customModal.component';
     FormsModule,
     ModalModule.forRoot()
   ],
-  providers: [ApiService],
+  providers: [ApiService, AuthService],
   bootstrap: [AppComponent],
   entryComponents:[CustomModalComponent]
 })
