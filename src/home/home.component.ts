@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../app/shared/auth.service';
 import { IUser } from '../Models/IUser';
 import { Router } from '@angular/router';
+import * as $ from '../../node_modules/jquery/dist/jquery.min';
 
 @Component({
   selector: 'app-home',
@@ -27,6 +28,10 @@ openNav() {
 /* Set the width of the side navigation to 0 */
 closeNav() {
   document.getElementById("mySidenav").style.width = "0";
+}
+
+toggleNav(){
+  $('#mySidenav').toggleClass('active');
 }
 
 }

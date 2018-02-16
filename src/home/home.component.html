@@ -1,11 +1,30 @@
 
 <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+    <div class="sidebar-header">
+        <div>
+            <h3>Time Tracker</h3>
+        </div>
+            <a class="closebtn" (click)="toggleNav()">&times;</a>
+    </div>
+    <!-- Sidebar Header -->
+    <div class="side-menu"> 
+    <!-- Sidebar Links -->
+        <ul class="list-unstyled components">
+            <li class="active"><a>Home</a></li>
+            <li><a>About</a></li>
+            <li><!-- Link with dropdown items -->
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li><a href="#">Page</a></li>
+                    <li><a href="#">Page</a></li>
+                    <li><a href="#">Page</a></li>
+                </ul>
+            </li>
+            <li><a>Portfolio</a></li>
+            <li><a>Contact</a></li>
+        </ul>
+    </div> 
 </div>
 
-<span class="side-menu-toggle" (click)="openNav()">&#9776;</span>
+<span class="side-menu-toggle" (click)="toggleNav()">&#9776;</span>
 <div class="home-header"></div>

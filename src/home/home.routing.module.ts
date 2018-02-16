@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthGuard } from '../guards/authGuard.service';
 
 const homeRoutes: Routes = [
-  {path: 'home', component: HomeComponent, canActivate:[AuthGuard]}
+  {path: 'home', component: HomeComponent, /*canActivate:[AuthGuard]*/}
 ];
 
 @NgModule({
