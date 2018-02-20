@@ -73,6 +73,7 @@
 
 .side-menu{
 position: relative;
+top: 55px;
 }
 
 a[data-toggle="collapse"] {
