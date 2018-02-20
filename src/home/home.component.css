@@ -71,9 +71,22 @@
     width:100%;
 }
 
+.title-div{
+    margin-left: 5px;
+}
+
 .side-menu{
 position: relative;
 top: 55px;
+background-color: #0a0a0a;
+}
+
+.side-menu li{
+    border-bottom: 0.5px solid rgb(26, 25, 25);
+}
+
+.side-menu li :hover{
+    color: #3cbaf5;
 }
 
 a[data-toggle="collapse"] {
