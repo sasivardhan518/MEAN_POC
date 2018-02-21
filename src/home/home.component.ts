@@ -10,7 +10,7 @@ import * as $ from '../../node_modules/jquery/dist/jquery.min';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  currentUser : IUser;
+  currentUser: IUser;
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
@@ -22,15 +22,15 @@ export class HomeComponent implements OnInit {
 
   /* Set the width of the side navigation to 250px */
 openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById('mySidenav').style.width = '250px';
 }
 
 /* Set the width of the side navigation to 0 */
 closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById('mySidenav').style.width = '0';
 }
 
-toggleNav(){
+toggleNav() {
   $('#mySidenav').toggleClass('active');
 }
 

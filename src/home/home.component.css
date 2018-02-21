@@ -29,6 +29,7 @@
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
+    cursor: pointer;
 }
 
 
@@ -58,7 +59,7 @@
     min-height: 100vh;
 }
 #mySidenav {
-     margin-left: -250px; 
+     margin-left: -250px;
 }
 
 #mySidenav.active{
@@ -80,11 +81,21 @@ position: relative;
 top: 55px;
 background-color: #0a0a0a;
 }
-
+.btn{
+  width:94%;
+  margin-left:3%;
+  margin-bottom: 10px;
+}
+.title{
+  margin-left:15px;
+}
 .side-menu li{
     border-bottom: 0.5px solid rgb(26, 25, 25);
+    cursor:pointer;
 }
-
+.side-menu li li {
+  margin-left:15px;
+}
 .side-menu li :hover{
     color: #3cbaf5;
 }
@@ -113,4 +124,3 @@ a[aria-expanded="true"]::before {
 @media screen and (max-height: 450px) {
     .sidenav a {font-size: 18px;}
   }
-  

@@ -1,16 +1,16 @@
 
 <div id="mySidenav" class="sidenav">
     <div class="sidebar-header">
-        <div>
+        <div class="title">
             <h3>Time Tracker</h3>
         </div>
         <a class="closebtn" (click)="toggleNav()">&times;</a>
     </div>
     <!-- Sidebar Header -->
-    <div class="side-menu"> 
+    <div class="side-menu">
     <!-- Sidebar Links -->
         <ul class="list-unstyled components">
-            <li class="active"><a>Home</a></li>
+            <li class="active"><a>Dashboard</a></li>
             <li><a>About</a></li>
             <li><!-- Link with dropdown items -->
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
@@ -23,7 +23,9 @@
             <li><a>Portfolio</a></li>
             <li><a>Contact</a></li>
         </ul>
-    </div> 
+    <button class="btn btn-success">Add New Item</button>
+    <button class="btn btn-info">Update items</button>
+    </div>
 </div>
 
 <span class="side-menu-toggle" (click)="toggleNav()">&#9776;</span>
